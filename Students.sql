@@ -30,5 +30,9 @@ select * from Student order by id limit 30, 50;
 select addr, count(*) as cnt from Students group by addr order by cnt desc;
 select addr, count(*) as cnt, avg(id) from Students
  group by addr having cnt > 90;
+
+select name, birth, (case when birth < '1990%' then '아재' else '청춘' end) from Students limit 10;
  
- select name, birth, (case when birth < '1990%' then '아재' else '청춘' end) from Students limit 10;
+update Students set gender=(case when birth mod 2 = 0 then 0 else 1 end) where id > 0;
+ 
+select gender, count(*) from Students group by gender;
