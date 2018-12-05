@@ -24,4 +24,3 @@ delete from Students where id = 3;
 
 show index from Students;
 show table status;
-update Students set gender = 0 where case when
