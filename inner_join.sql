@@ -32,6 +32,6 @@ select j.name, s.addr, count(*)
  group by s.addr;
 
 -- 과목별 학생 목록
- select * from Subjects;
+ select * from Enroll;
  
  

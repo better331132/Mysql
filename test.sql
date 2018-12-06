@@ -73,7 +73,7 @@ insert into Subjects(name,profs) values("아시아의 역사문화",100);
 
 -- 수강신청 목록 작성
 insert into Enroll(students, subjects)
- select s.id, j.id from Students s, Subjects j where mod(ceil(rand()*1000)+ceil(s.id), 3)!=0;
+ select s.id, j.id from Students s, Subjects j where mod(ceil(rand()*10000), 4)!=0;
  
 -- 과목별 학생 수 확인
 select subjects, count(*) from Enroll group by subjects;
