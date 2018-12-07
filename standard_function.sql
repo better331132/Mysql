@@ -1,0 +1,6 @@
+-- sum, avg, min, max, mod, count, stdev, var_samp
+-- select CAST('2018-12-25 11:22:22.123' AS DATETIME);-- select CAST( 1.567 AS Signed Integer ), CONVERT( 1.567, Signed Integer);
+-- select now(), str_to_date('2018-12-03', '%Y-%m-%d');  -- cf. '%Y-%d-%m'
+-- concat, concat_ws, group_concat
+-- ex. 지역별 학생명단
+-- select addr, group_concat(name) as 'student names' from Student group by addr;
