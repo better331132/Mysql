@@ -1,5 +1,3 @@
-insert into Students(name, tel, email) values('엄호희', '010-2937-3569', 'Tk91t1mqrL0A@gamil.com');
-
 select * from Students order by id desc;
 
 truncate Students;

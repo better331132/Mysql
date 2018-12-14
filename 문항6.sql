@@ -1,4 +1,4 @@
--- 중간, 기말 성적을 가로로 배열한 경우
+-- 문항 6
 create table Grade(
 	id int not null auto_increment primary key,
     midterm varchar(3),
@@ -35,22 +35,6 @@ select j.name as '과목명',
 group by j.name
 order by j.name;
 
--- sub query
-select max(a.student_name) from
-(select s.id, s.student_name, j.subject_name, g.midterm+finalterm
- from Enroll e inner join Student s on e.students = s.id
-			   inner join Subject j on e.subjects = j.id
-			   inner join Grade g on e.id = g.enroll 
-	   order by g.midterm+finalterm desc) a 
-       group by a.subject_name limit 1;
-
-select s.id, s.student_name, j.subject_name, g.midterm+finalterm
- from Enroll e inner join Student s on e.students = s.id
-			   inner join Subject j on e.subjects = j.id
-			   inner join Grade g on e.id = g.enroll 
-	   order by g.midterm+finalterm desc;
-
-
 -- 3
 select s.name as '학생명',
        count(*) as '과목수',
@@ -66,6 +50,3 @@ select s.name as '학생명',
                inner join Grade g on e.id = g.enroll
  group by s.name
  order by s.name;
-
-
-select * from Student;

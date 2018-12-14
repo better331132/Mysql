@@ -1,11 +1,11 @@
-CREATE TABLE `Students` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  `tel` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `birth` date DEFAULT NULL,
-  `addr` varchar(45) DEFAULT NULL,
-  `gender` bit(1) DEFAULT NULL COMMENT '남 = 0, 여 = 1',
+create table Students (
+  id int unsigned NOT NULL AUTO_INCREMENT,
+  name varchar(31) NOT NULL,
+  tel varchar(31) DEFAULT NULL,
+  email varchar(31) DEFAULT NULL,
+  birth date DEFAULT NULL,
+  addr varchar(31) DEFAULT NULL,
+  gender bit(1) DEFAULT NULL COMMENT '남 = 0, 여 = 1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -42,7 +42,7 @@ create table Enroll(
 );
 
 insert into Enroll(students, subjects)
- select s.id, j.id from Students s, Subjects j where mod(ceil(rand()*1000)+ceil(s.id), 3)!=0;
+ select s.id, j.id from Students s, Subjects j where mod(ceil(rand()*1000), 3)!=0;
 
 select * from Enroll;
 select * from Profs;

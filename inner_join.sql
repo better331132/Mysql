@@ -8,7 +8,7 @@ select c.*, s.name as "Club leader"
  from Club c inner join Students s on c.leader = s.id; 
 
 -- 과목별 등록 학생수
-select e.subject, max(j.name) as "subject name", count(*) 
+select e.subject, max(j.name) as "subject", count(*) as "student"
  from Enroll e inner join Subject j on e.subject = j.id
  group by subject;
  
@@ -39,5 +39,8 @@ select min(j.name) as '과목명', (case when s.gender = 0 then '여' else '남'
  from Enroll e inner join Student s on e.student = s.id
 			   inner join Subject j on e.subject = j.id
 where s.addr = "서울" group by j.id, s.gender order by j.name, s.gender desc;
+
  
+
+
  
